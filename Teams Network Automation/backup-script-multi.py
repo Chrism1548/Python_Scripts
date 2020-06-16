@@ -4,7 +4,7 @@ import telnetlib
 
 user = input('Enter Your Password')
 password = getpass.getpass()
-D = open('devices')
+D = open('devices.txt')
 
 for AD in D:
     AD = AD.strip()
