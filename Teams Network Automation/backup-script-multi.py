@@ -25,6 +25,7 @@ for AD in D:
     tn.write(b'exit\n')
 
     #save running config to folder
+    print('Saving Backup to Folder')
     readoutput = tn.read_all().decode('ascii')
     filepath = b'C:\Users\Chris\Downloads\Backups\ '
     device_name = filepath.decode('ascii')
