@@ -2,6 +2,7 @@
 import getpass
 import telnetlib
 import datetime
+import time
 
 
 user = input('Enter Your Password')
@@ -28,6 +29,7 @@ for AD in D:
     tn.write(b'terminal length 0\n')
     tn.write(b'sh run\n')                                  # sh run can be replaced with sh start
     tn.write(b'exit\n')
+    time.sleep(1)
 
     # Save running config to folder
     print('Saving Backup to Folder')
@@ -37,7 +39,7 @@ for AD in D:
     saveoutput = open(PATH + AD + '-' + str(DT) + '-' + '.txt', 'w')
     saveoutput.write(str(readoutput))
     saveoutput.close()
-    print(readoutput)
+    #print(readoutput)
 
     tn.close()
 
