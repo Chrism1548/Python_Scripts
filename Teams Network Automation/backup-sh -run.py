@@ -20,7 +20,7 @@ for AD in D:
     if password:
         tn.read_until(b"Password: ")
         tn.write(password.encode('ascii') + b'\n')
-        print('Logging into ' + (AD))
+        print('Logging into ' + AD)
 
 
     # This Section will copy the start/running config of the switch/router
