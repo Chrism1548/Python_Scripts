@@ -7,7 +7,7 @@ import time
 
 user = input('Enter Your Password')
 password = getpass.getpass()
-DT = datetime.datetime.now().strftime('%b-%d-%Y-%I-%M-%S') #('Date-%b-%w-%Y--Time-%I-%M-%S')    #replace(microsecond=0)
+DT = datetime.datetime.now().strftime('%b-%d-%Y-%I-%M-%p') #('Date-%b-%w-%Y--Time-%I-%M-%S')    #replace(microsecond=0)
 D = open('devices.txt')
 
 for AD in D:
