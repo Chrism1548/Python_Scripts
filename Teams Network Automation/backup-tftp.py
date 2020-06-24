@@ -7,7 +7,7 @@ import time
 
 user = input('Enter Your Password')
 password = getpass.getpass()
-DT = datetime.datetime.now().strftime('%b-%w-%Y-%I-%M-%S') #('Date-%b-%w-%Y--Time-%I-%M-%S')    #replace(microsecond=0)
+DT = datetime.datetime.now().strftime('%b-%w-%Y-%I-%M-%S-%p') #('Date-%b-%w-%Y--Time-%I-%M-%S')    #replace(microsecond=0)
 D = open('devices.txt')
 
 for AD in D:
@@ -30,7 +30,6 @@ for AD in D:
     tn.write(b'sw-config-' + str(AD).encode('ascii') + b'-' + str(DT).encode('ascii') + b'.txt' +b'\n')
     tn.write(b'exit\n')
     time.sleep(1)                                        # This will time delay of the execution of the script
-
 
     tn.close()
 
