@@ -11,7 +11,7 @@ DT = datetime.datetime.now().strftime('%b-%d-%Y-%I-%M-%p') #('Date-%b-%d-%Y--Tim
 D = open('devices.txt')
 
 for AD in D:
-    AD = AD.strip()
+    AD = AD.strip()                                        # Removes white spaces from start and end of line in file
     HOST = AD
 
     tn = telnetlib.Telnet(HOST)
@@ -34,7 +34,7 @@ for AD in D:
     # Save running config to folder
     print('Saving Backup to Folder')
     readoutput = tn.read_all().decode('ascii')
-    filepath = b'C:\Users\Chris\Downloads\Backups\ '     # Change file path to your own
+    filepath = b'C:\Users\Chris\Downloads\Backups\ '      # Change file path to your own
     PATH = filepath.decode('ascii')
     saveoutput = open(PATH + AD + '-' + str(DT) + '-' + '.txt', 'w')
     saveoutput.write(str(readoutput))
