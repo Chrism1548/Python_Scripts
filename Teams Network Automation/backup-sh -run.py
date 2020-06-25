@@ -4,7 +4,7 @@ import telnetlib
 import datetime
 import time
 
-
+# This section will prompt for username and password
 user = input('Enter Your Password')
 password = getpass.getpass()
 DT = datetime.datetime.now().strftime('%b-%d-%Y-%I-%M-%S-%p') #('Date-%b-%d-%Y--Time-%I-%M-%S-%p')    #replace(microsecond=0)
@@ -40,6 +40,7 @@ for AD in D:
     saveoutput.write(str(readoutput))
     saveoutput.close()
     #print(readoutput)
+    print(len(readoutput))                                # This will print out the number of characters in the output
 
     tn.close()
 
