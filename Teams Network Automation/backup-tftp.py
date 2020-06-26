@@ -26,7 +26,7 @@ for IP in range (211,219):                               # This code is using Ra
     print('Backing up config')
     tn.write(b'copy running-config tftp:\n')             # This can be changed to startup-config
     tn.write(b'172.16.20.2\n')                           # This can be changed to your TFTP server address
-    tn.write(b'Backup_of_config-' + b'172.16.20.' + str(IP).encode('ascii') + b'-' + str(DT).encode('ascii') + b'.txt' +b'\n')
+    tn.write(b'Backup_of_config-' + b'172.16.20.' + str(IP).encode('ascii') + b'-' + str(DT).encode('ascii') + b'.txt' + b'\n')
     tn.write(b'exit\n')
     time.sleep(1)                                        # This will time delay of the execution of the script
 
