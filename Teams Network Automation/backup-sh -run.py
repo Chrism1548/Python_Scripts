@@ -34,14 +34,18 @@ for AD in D:
     # Save running config to folder
     print('Saving Backup to Folder')
     readoutput = tn.read_all().decode('ascii')
-    filepath = b'C:\Users\Chris\Downloads\Backups\ '      # Change file path to your own
-    PATH = filepath.decode('ascii')
-    saveoutput = open(PATH + AD + '-' + str(DT) + '-' + '.txt', 'w')
+    filepath = b'C:\Users\Chris\Downloads\Backups\ '                  # Change file path to your own
+    PATH = filepath.decode('ascii')                                   # This is the file path where the folder is located
+    saveoutput = open(PATH + AD + '-' + str(DT) + '-' + '.txt', 'w')  # This saves the file to the folder with date and time
     saveoutput.write(str(readoutput))
     saveoutput.close()
     #print(readoutput)
-    print(len(readoutput))                                # This will print out the number of characters in the output
+    print('The length of the file is ',  len(readoutput))         # This will print out the number of characters in the output
+
+    if len(readoutput) <= 4700:
+        print('No changes have been made to the config!')
+    elif len(readoutput) > 4700:
+        print('Changes have been made to the config! please check the config for changes.')
+
 
     tn.close()
-
-
