@@ -40,12 +40,12 @@ for AD in D:
     saveoutput.write(str(readoutput))
     saveoutput.close()
     #print(readoutput)
-    print('The length of the file is ',  len(readoutput))         # This will print out the number of characters in the output
+    print('The length of the file is ',  len(readoutput))             # This will print out the number of characters in the output
 
     if len(readoutput) <= 4700:
         print('No changes have been made to the config!')
     elif len(readoutput) > 4700:
-        print('Changes have been made to the config! please check the config for changes.')
+        print('Changes have been made to the config! Please check the config for changes.')
 
 
     tn.close()
