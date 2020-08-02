@@ -33,9 +33,10 @@ for AD in D:
 
     # Save running config to folder
     print('Saving Backup to Folder')
-    readoutput = tn.read_all().decode('ascii')
-    filepath = b'C:\Users\Chris\Downloads\Backups\ '                  # Change file path to your own
-    PATH = filepath.decode('ascii')                                   # This is the file path where the folder is located
+    readoutput = tn.read_all().decode('ascii')                        # Variable to take the show run output and convert to readable format
+    filepath = b'C:\Users\Chris\Downloads\Backups\ '                  # Change file path to your own. filepath is a inbuilt python syntax
+    PATH = filepath.decode('ascii')                                   # This is the file path where the folder is located. This converts the
+                                                                      # filepath from string to bytes
     saveoutput = open(PATH + AD + '-' + str(DT) + '-' + '.txt', 'w')  # This saves the file to the folder with date and time
     saveoutput.write(str(readoutput))
     saveoutput.close()
